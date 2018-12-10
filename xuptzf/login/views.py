@@ -1,7 +1,9 @@
 from django.http import HttpResponse
 from django.views.decorators.http import require_POST
 
-from login import login_request
+from login import login_request, models
+
+
 # Create your views here.
 
 
@@ -11,4 +13,4 @@ def login(request):
     password = request.GET['password']
     checkcode = request.GET['checkcode']
     cookie = request.GET['cookie']
-    return HttpResponse(login_request.login(stuNum=stuNum, password=password, checkcode=checkcode, cookie=cookie))
+
